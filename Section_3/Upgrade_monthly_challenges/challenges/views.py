@@ -15,10 +15,10 @@ monthly_challenge = {
     "september": "This Challenge is September!",
     "october": "This Challenge is October!",
     "november": "This Challenge is November!",
-    "december": "This Challenge is December!",
+    "december": None,   # we do it None for use if Tag in Template.
 }
 
-
+# to show user all the month list
 def index1(request):
     months = list(monthly_challenge.keys())
     return render(request, "challenges/index.html", {

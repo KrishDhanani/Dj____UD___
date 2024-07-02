@@ -54,3 +54,15 @@
 # {% formfield %}
 # {% url %}   very important
 # {% static %}
+
+# I want to discuss one Tag "Block"
+# e.g.,
+# {% block page_title %}My Challenges{% endblock %}
+# here we write block Tag inside {% %} and we "must" give each block name here it is "page_title"
+# and remember we also need to close each block
+
+# Here we add one folder "templates" and there one base.,hyml file inside all blocks is created
+# Now we just need to extend this file where we need it but there we if use absolute path like {% extends "../../../templates/base.html"%}
+# and in future if =we change the location of file then error is generate for that solution we add template folder in settings.py file
+# there ion DIR folder we add relation of template folder which you can see there.
+

@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>All Challenges</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block page_title %}
+    All Challenges
+{% endblock %}
+
+{% block content %}
+    <h1>All Challenges</h1>
     <ul>
         {% for month in months %}
         <li><a href="/challenges/{{ month }}">{{ month|title }}</a></li>
@@ -14,6 +15,4 @@
         <!-- In url we set the name for dynamic generation of url we use it here, and month is argument -->
         {% endfor %}
     </ul>
-
-</body>
-</html>
+{% endblock %}
