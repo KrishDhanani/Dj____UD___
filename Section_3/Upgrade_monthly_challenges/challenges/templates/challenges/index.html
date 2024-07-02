@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Challenges</title>
+</head>
+<body>
+    <ul>
+        {% for month in months %}
+        <li><a href="/challenges/{{ month }}">{{ month|title }}</a></li>
+        <!-- here upper side writen href url is hard corded for dynamic generation -->
+
+        <li><a href="{% url 'month-challenge' month=month %}">{{ month }}</a></li>
+        <!-- In url we set the name for dynamic generation of url we use it here, and month is argument -->
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
