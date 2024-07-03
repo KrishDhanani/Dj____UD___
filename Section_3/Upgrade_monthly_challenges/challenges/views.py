@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.template.loader import render_to_string
 
@@ -55,4 +55,10 @@ def monthly_challenges(request, month):
         # folder name because if there is so many template file with same name then django is confused so practice to write template name with folder name.
         # return HttpResponse(response_data)
     except:
-        return HttpResponseNotFound(f"<h1>Monthly challenge not found!</h1>")
+        # if we return error with our file using render_to_string
+        # response_date = render_to_string("404.html")
+        # return HttpResponseNotFound(response_date)
+
+        # if we return error through raising
+        raise Http404("Invalid month")
+
