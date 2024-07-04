@@ -10,7 +10,8 @@
 {% endblock %}
 
 {% block content %}
-    <h1>All Challenges</h1>
+    {% include "challenges/includes/header.html" %}
+
     <ul>
         {% for month in months %}
         <li><a href="/challenges/{{ month }}">{{ month|title }}</a></li>
