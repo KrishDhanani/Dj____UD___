@@ -51,9 +51,51 @@
 # Remember:
 # Book.objects.get(is_bestselling=True)
 # Then it will return more than one book, and it not handles by get method, get method handle only that query which return single value so pass inside like that query.
+#
+# for getting multiple value output we use filter()
+# write in shell like; Book.objects.filter(is_bestselling=True) # It returns list
+#
+
+# And:
+# we can also apply "and" condition like;
+# Book.objects.filter(is_bestselling=True, rating=2)
+# Django check for both condition fulfil items in a database
+#
+#
+# Now if you write like;
+# Book.objects.filter(rating<3)    # Django consider it as wrong Syntax for like this condition Django has their own "lookups"(in documentation described) syntax like for write in shell;
+# Book.objects.filter(rating__lt=3)    # It considers as lower than
+# Book.objects.filter(rating__lte=3)   # It considers as lower than and equal to condition
+# Book.objects.filter(rating__lt=5, title__contains='Lord')
 
 
+# Or:
+# in shell first need to import Q class for that:
+# from django.db.models import Q
+# Book.objects.filter(Q(rating__lt=3) | Q(is_bestselling=True))  # return list of fulfilling both conditions with, or
+#
+# also we can combine and condition here;
+# Book.objects.filter(Q(rating__lt=3) | Q(is_bestselling=True), Q(author='J.K. Rowling'))
 
+
+# Query Performance:
+# In shell if I write;
+# In [11]: bestseller = Book.objects.filter(is_bestselling=True)
+#
+# In [12]: amazing_bestseller = bestseller.filter(rating__gt=4)
+#
+# In [13]: print(bestseller)
+# <QuerySet [<Book: Harry Potter 1 - The Philosopher's stone (5)>, <Book: Lord Of the Rings (4)>, <Book: My Diary (2)>]>
+#
+# In [14]: print(amazing_bestseller)
+# <QuerySet [<Book: Harry Potter 1 - The Philosopher's stone (5)>]>
+#
+# In [15]: print(bestseller)
+# <QuerySet [<Book: Harry Potter 1 - The Philosopher's stone (5)>, <Book: Lord Of the Rings (4)>, <Book: My Diary (2)>]>
+#
+# so in input 11 and 12 it's ok to write the query and store in memory but Remember Django is not touch the Database yet
+# when you write the print statement and then use inside variable then Django go to Database and now the value is store in
+# Django "cashed" and if you see in input 15 again print bestseller then it will execute faster than before because now Django use cashed
 
 
 
