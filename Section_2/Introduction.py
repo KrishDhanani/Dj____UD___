@@ -7,12 +7,12 @@
 # here we create section 2 and inside that "monthly_challenges" name one project is
 #  there, and inside it there is challenge name app is there.
 
-# What are Url's Config & Routes? :
+# What are Url's Config & Routes?:
 # URL-Action mapping that ensures that certain results are "archived" when certain URL enter by user.
 
 # e.g.
 # my-page.com/ --> show starting page
-# my-page.com/posts --> show list of all posts
+# my-page.com/posts --> show a list of all posts
 # my-page.com/posts/python-is-great --> show specific post
 
 # It's like give different URL's and get back different results.
