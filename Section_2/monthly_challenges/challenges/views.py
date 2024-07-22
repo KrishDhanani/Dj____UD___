@@ -42,7 +42,8 @@ def index1(request):
     return HttpResponse(response_data)
 
 
-# here we create logic that if number enter by user is 1 then it will redirect to january to archive this functionality:
+# here we create logic that if number enter by user is 1,then it will redirect to january to archive this functionality:
+# /challenges/1   -->(Transfer to string function) /challenges/january
 def monthly_challenge_by_number(request, month):
     months = list(monthly_challenge.keys())   # keys() function return list object which has all the keys which inside the dictionary and
     # remember keys in Python dictionaries are automatically ordered alphabetically in Python 3.9 and above.

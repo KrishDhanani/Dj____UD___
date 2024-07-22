@@ -10,7 +10,8 @@
 
 # For generate the template file:
 # go to your app and create folder name as "templates" then again inside templates create "app" name folder and then go inside this folder and create different html file.
-#
+# the reason is to create again app name folder inside the templates folder is to not conflict at the time when you have multiple apps.
+#  
 # Now for correctly render templates goto settings.py file and do changes in "TEMPLATES" name list
 # Inside list in "DIRS" list add a path of your templet folder and remember at calling time in views.py file we add like "challenges/challenge.html" so that inside "DIRS" list we do not add "challenges" otherwise we need to add.
 

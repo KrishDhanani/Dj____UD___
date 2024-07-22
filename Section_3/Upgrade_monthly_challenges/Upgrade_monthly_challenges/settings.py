@@ -58,7 +58,9 @@ TEMPLATES = [
         # when apps are not in your current main folder, then use this method to config your app to render your templates.
         'DIRS': [
             # BASE_DIR / "challenges" / "templates"         # another way at upper side in INSTALLED_APPS
+            # Here Base_DIR we write first it means in our project folder there is challenges folder and templates folder. 
             BASE_DIR / 'templates',
+            # This registration of templates folder is for outside the main templates folder but the app specific templates folder we register it to the INSTALLED_APPS.
         ],
         'APP_DIRS': True,
         'OPTIONS': {

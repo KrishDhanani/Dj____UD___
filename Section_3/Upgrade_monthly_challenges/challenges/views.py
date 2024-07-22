@@ -44,7 +44,7 @@ def monthly_challenges(request, month):
         challenge_text = monthly_challenge[month]
         print(f"Rendering challenge for {month}: {challenge_text}")
         return render(request, "challenges/challenge.html", {"text": challenge_text, "month_name": month})   # this is shortcut method and down is longcut method.
-        # Remember:
+        # Remember: 
         # "render" fun. need first argument as "request" and second one is normal html file.
         # The third one is dict. in which key value pair and it pass to template at render time and each key act as vaariable with its value.
 
@@ -61,4 +61,5 @@ def monthly_challenges(request, month):
 
         # if we return error through raising
         raise Http404("Invalid month")
-
+        # When we raise "error" here Django will go to root folder and check in template folder for 404.html it here not render because Django render 404 template at debug=False in setting
+        # we set Debug=False at deployment time so no need to wory 
