@@ -68,6 +68,7 @@
 # Firstly, we add all our requirement in our app's models.py folder then run migrations command so some file was generated in-app migration folder then run migrate command to execute all migration files.
 # Remember:
 # In Django you don't need to create a specific column for id, Django automatically creates that column
+# You always need to perform migration whenever you try to change in models.py file inside any class you add or modify any field.
 
 
 
@@ -130,7 +131,7 @@
 #
 # try to understand what Django tell you in two option:
 # it say before you added entries not have any data for new column and entries not nullable fill there then which option you choose
-# I choose here 2nd option
+# I choose here 2nd option (It mean's quit the migration and I need to manually add default value to new added field).
 # So that need to models.py file and add manually default value in field.
 #
 # After do changes like if user not provided any value for any particulate field then what Django needs to do,
@@ -138,7 +139,7 @@
 #
 #
 # That's it for see it does or not goto app migration folder
-# and see if there is any type of new file is generated or not.
+# and see if there is any type of new file is generated or not which include which are the changes done by your side.
 #
 #
 # Now to run this migration
