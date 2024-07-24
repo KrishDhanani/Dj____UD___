@@ -117,3 +117,25 @@
 # In views.py add data using DataBase:
 # Now we add in views.py file models Book class.
 # Now you can see the Syntax is same as ago we use in shell for handling data base.
+
+
+# Adding a Slugfield & Overwriting field:
+# Until this point you see if press first Book link then it will redirect you to at http://127.0.0.1:8000/1 where 1 means it's id of book.
+# Now at "1" I want slug like "harry-potter-1" for that go to models.py file.
+# see how add slugField, override save() method.
+# 
+# Now i run migration to see what changes are happen go and see third number migration.
+# After migration done succefully,
+# open shell at root level;
+# run code:
+# from book_outlet.models import Book
+# Book.objects.get(title="Harry Potter 1 - The Philosopher's Stone").save()
+# Book.objects.get(title="Harry Potter 1 - The Philosopher's Stone").slug     # 'harry-potter-1-the-philosophers-stone'
+# 
+# Now do same thing for all existing book in shell.
+# then quit from shell.
+
+
+# Now go in urls.py(app) file and change from id to slug.
+# And also change at models.py file in get_absolute_path() method i also change self.slug 
+# Now you again runserver and see the changes at url: http://127.0.0.1:8000/lord-of-the-rings 

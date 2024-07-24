@@ -10,7 +10,8 @@ def index(request):
         "books": books,
     })
 
-def book_detail(request, id):    # we set name here parameter to id because in urls.py file we set there "id" so need to use same name here.
+def book_detail(request, slug):    # before we set name here parameter to id because in urls.py file we set there "id" so need to use same name here.
+    #  But now change to slug so use here slug.
     # try:
     #     book = Book.objects.get(pk=id)
     #     # here "pk" means primary key; you can also write id=id.
@@ -18,7 +19,7 @@ def book_detail(request, id):    # we set name here parameter to id because in u
     #     raise Http404()
 
     # Ulternatively of upper code
-    book = get_object_or_404(Book, pk=id)
+    book = get_object_or_404(Book, slug=slug)   # we set pk=id before slug=slug
     return render(request, 'book_outlet/book_detail.html',{
         "title": book.title,
         "author": book.author,
