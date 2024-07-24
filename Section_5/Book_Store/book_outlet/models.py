@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.urls import reverse
 
 
 # Create your models here.
@@ -17,5 +18,8 @@ class Book(models.Model):  # in models Model is class (we extend class here)
 
     # Here for getting a different type of field, go to the Django documentation Field section.
 
+    def get_absolute_url(self): # It's Override method which simply return path for all book. 
+        return reverse('book-detail', args=[self.id])   
+            
     def __str__(self):
         return f"{self.title} ({self.rating})"

@@ -74,7 +74,7 @@
 # from django.db.models import Q
 # Book.objects.filter(Q(rating__lt=3) | Q(is_bestselling=True))  # return list of fulfilling both conditions with, or
 #
-# also we can combine and condition here;
+# also we can combine "and" condition here;
 # Book.objects.filter(Q(rating__lt=3) | Q(is_bestselling=True), Q(author='J.K. Rowling'))
 
 
@@ -96,7 +96,24 @@
 # so in input 11 and 12 it's ok to write the query and store in memory but Remember Django is not touch the Database yet
 # when you write the print statement and then use inside variable then Django go to Database and now the value is store in
 # Django "cashed" and if you see in input 15 again print bestseller then it will execute faster than before because now Django use cashed
+# whay this happen because the we already execute this type of query in input 13.
+ 
+
+# Bulk Operations:
+# 1. You can delete multiple model instances (i.e. database records) at once: https://docs.djangoproject.com/en/3.1/topics/db/queries/#deleting-objects
+
+# 2. You can update multiple model instances (i.e. database records) at once: https://docs.djangoproject.com/en/3.0/ref/models/querysets/#bulk-update
+
+# 3. You can create multiple model instances (i.e. database records) at once: https://docs.djangoproject.com/en/3.0/ref/models/querysets/#bulk-create
 
 
+# Now we all know we not write our database operation in shell at real life project and for that we add new templates in project by simpaly get out of terminal.
+
+# Here we added some html file like base.html(At root level), book_detail.html and index.html(in app), 
+# Also config. urls.py at both app as well as main folder.
+# Also set setting for root level template file.
 
 
+# In views.py add data using DataBase:
+# Now we add in views.py file models Book class.
+# Now you can see the Syntax is same as ago we use in shell for handling data base.

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    All Books
+{% endblock %}
+
+{% block content %}
+<ul>
+    {% for book in books %}
+        <li><a href="{{ book.get_absolute_url }}"> {{ book.title }}</a> (Rating: {{ book.rating}})</li> 
+        {% comment %} 
+        here used "book.get_absolute_url" come from models.py file function which simply mean that it generate urk link for us using reverse function. 
+        Here we also can use {% url 'book-detail' book.id %}
+        If you write {{ book }} in "a" tag then get output as written in str function 
+        {% endcomment %}
+    {% endfor %}
+</ul>
+{% endblock %}
