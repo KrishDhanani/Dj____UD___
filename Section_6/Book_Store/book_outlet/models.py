@@ -15,7 +15,7 @@ class Book(models.Model):  # in models Model is class (we extend class here)
     # if you do here blank= True, then it does not place any values like Null, it just lives that entire blank
     is_bestselling = models.BooleanField(default=False)
 
-    slug = models.SlugField(default="", null=False, db_index=True) # if title is Harry Potter 1 => harry-potter-1
+    slug = models.SlugField(default="", blank=True, editable=False, null=False, db_index=True) # if title is Harry Potter 1 => harry-potter-1
     # for finding faster slug in database we use db_index=True
     # Here for getting a different type of field, go to the Django documentation Field section.
 

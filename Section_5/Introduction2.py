@@ -139,3 +139,18 @@
 # Now go in urls.py(app) file and change from id to slug.
 # And also change at models.py file in get_absolute_path() method i also change self.slug 
 # Now you again runserver and see the changes at url: http://127.0.0.1:8000/lord-of-the-rings 
+
+# 
+# If you notice here we find item by "slug" and now for search everytime in database and improve performans we alo add one field in SlugField.
+# db_index=True 
+# But remember not add it at all column because it then decrease performance.
+# because Django need to assign index to all time whenever you want to add new item.
+
+
+# Aggregation & Ordering:
+# aggregate functions perform calculations on a set of values and return a single result or summary.
+# SUM: Calculates the sum of a numeric column.
+# AVG: Computes the average value of a numeric column.
+# MAX: Finds the maximum value in a column.
+# MIN: Identifies the minimum value in a column.
+# COUNT: Counts the number of rows in a result set.
