@@ -5,9 +5,37 @@ from django.utils.text import slugify
 
 # Create your models here.
 
-class Author(models.Model):     # New added class
+class Country(models.Model):
+    name = models.CharField(max_length=80)
+    code = models.CharField(max_length=2)
+
+    def __str__(self):
+        return f'{self.name} {self.code}'
+    
+    class Meta:
+        verbose_name_plural = 'Countries'
+
+class Address(models.Model):    #This class helps us in one to one relation ship where one Address can have only onr Author.
+    street = models.CharField(max_length=80)
+    postal_code = models.CharField(max_length=5)
+    city = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f'{self.street}, {self.postal_code}, {self.city}'
+    
+    class Meta:
+        verbose_name_plural = 'Address Entries'
+    # This class tell's Django to how this model should output in Admin Pannel.
+    # Learn more about it in documentation.
+    # For see where the changes is made see at the left corner you see 'Address Entries'.      
+
+class Author(models.Model):     # New added class   # This class help in one to many relationship where one Author and Many Books.
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
+    address = models.OneToOneField(Address, on_delete=models.CASCADE, null=True)       # OneToOneField help us on how data should be the related with each Other.
+
+    def __str__(self) -> str:
+        return f'{self.first_name} {self.last_name}'  # In Admin area how Author should look like other wise it shows object.
 
 
 class Book(models.Model): 
@@ -27,7 +55,9 @@ class Book(models.Model):
     
     is_bestselling = models.BooleanField(default=False)
     slug = models.SlugField(default="", blank=True, null=False, db_index=True) 
-
+    
+    published_countries = models.ManyToManyField(Country)
+    # You can't add on_delete in ManyToMany rel.
 
     def get_absolute_url(self): 
         return reverse('book-detail', args=[self.slug])  
