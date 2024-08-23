@@ -13,7 +13,7 @@
 # Network Sockets:
 # Socket: combination of ip address and port number
 # HTTP (Hyper text transfer protocol) protocol uses to communicate with web server.
-# URL: Uniform Resource Locator (e.g. http://data.pre4e.org:5050/page1.htm)
+# URL: Uniform Resource Locator (e.g. http://data.pre4e.org:5050/page1.html)
 # http://  <-- protocol
 # data.pre4e.org  <-- host name
 # 5050 <-- port number
