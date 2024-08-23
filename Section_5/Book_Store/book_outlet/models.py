@@ -18,7 +18,7 @@ class Book(models.Model):  # in models Model is class (we extend class here)
     slug = models.SlugField(default="", null=False, db_index=True) # if title is Harry Potter 1 => harry-potter-1
     # for finding faster slug in database we use db_index=True
     # Here for getting a different type of field, go to the Django documentation Field section.
-
+    
 
     def get_absolute_url(self): # It's Override method which simply load the data for this specific model. 
         return reverse('book-detail', args=[self.slug])  # Before there is self.id is there. 

@@ -5,7 +5,7 @@
 # 3.Delivering Content & Processing Input
 
 # here we create section 2 and inside that "monthly_challenges" name one project is
-#  there, and inside it there is challenge name app is there.
+# there, and inside it there is challenges name app is there.
 
 # What are Url's Config & Routes?:
 # URL-Action mapping that ensures that certain results are "archived" when certain URL enter by user.
@@ -21,5 +21,3 @@
 # The logic that is executed for different URLs(and Http method)
 # And there are many "functions" and "class" in code that handle request and response.
 # What they do?: Load and prepare data; Run any other Business logic; prepare and return response data(e.g. HTML)
-
-

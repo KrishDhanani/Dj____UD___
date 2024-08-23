@@ -46,7 +46,7 @@ class Book(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True, related_name='books')  # Inside always write that model name with wich we want to pointer at.
     # on_delete=models.CASCADE  It simpaly means if any one of Author deleted then also all the related Book must be deleted. 
     # there also models.PROTECT to not delete book and many others you can refer at Documentation. 
-    # Here we add null=True because if already some data we have in book class then want toa add some new column then it will run migration for that we need to add it.
+    # Here we add null=True because if already some data we have in book class then want to add some new column then it will run migration for that we need to add it.
     # After solving migrations problem by adding null=True again another problem is accure to run migrate that return error you add two field f_name & l_name but there is already author field inside some value present for existing data
     # Then we remove all data and run migrate command and it succed 
     # Then add some data to Author table and some data to Book table. 
