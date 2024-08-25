@@ -41,3 +41,11 @@
 # Manually form validation and problem with "that":
 # If there is nothing written inside the form and user submit form then we want to show some error news 
 # Handling form validation is typically very lenthy task i added one example here. 
+# To resolve it Django has it's own Form Class. 
+
+
+# Using Django Form Class:
+# For this part understand first goto forms.py file
+
+# Validation using Django form 
+# again see in the forms.py file
