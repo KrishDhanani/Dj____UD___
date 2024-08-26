@@ -49,3 +49,9 @@
 
 # Validation using Django form 
 # again see in the forms.py file
+
+# Coustomizing form Control like adding label and etc.
+# Then
+# TO show not full form at once means to show where the form field look and where the error nessage show for 
+# goto the review.html
+#  
