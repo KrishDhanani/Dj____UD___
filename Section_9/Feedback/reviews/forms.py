@@ -11,4 +11,6 @@ class ReviewForm(forms.Form):
     # Remember Required=True always available in every field.
     # If you not add label then By default Django use its field name(variable name). 
 
+    review_text = forms.CharField(label="Your Feedback", widget=forms.Textarea,max_length=200, required=False)
+    rating = forms.IntegerField(label="Your Rating", min_value=1, max_value=5)
     # To learn about all form field goto Django Form Field Official Documentation.

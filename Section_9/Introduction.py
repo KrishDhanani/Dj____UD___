@@ -55,3 +55,8 @@
 # TO show not full form at once means to show where the form field look and where the error nessage show for 
 # goto the review.html
 #  
+
+# By using inspect you can see when error was generate than by Django there is "errorlist" class was generated inside unordered list.
+# here by using that class we add some css to the form.
+
+# Then we storing form data to the database.

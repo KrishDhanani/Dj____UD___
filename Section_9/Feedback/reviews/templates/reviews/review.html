@@ -25,6 +25,15 @@
                 {{ form.user_name }}        {% comment %} It will render input field {% endcomment %}
                 {{ form.user_name.errors }}     {% comment %} It will render error msg. {% endcomment %}
             </div>
+
+            {% for field in form %}
+                <div class="form-control {% if field.errors %} errors {% endif %}">
+                    {{ field.label_tag }}  {% comment %} It will render label. {% endcomment %}
+                    {{ field }}        {% comment %} It will render input field {% endcomment %}
+                    {{ field.errors }}     {% comment %} It will render error msg. {% endcomment %}
+                </div>
+            {% endfor %}
+            
             <button> Send </button>
             
         </form>

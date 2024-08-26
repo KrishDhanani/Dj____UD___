@@ -2,6 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from .forms import ReviewForm
+from .models import Review
 
 # Create your views here.
 
@@ -24,6 +25,10 @@ def review(request):
         form = ReviewForm(request.POST)
 
         if form.is_valid():           # Check wether form was submitted currectly.
+            review = Review(user_name=form.cleaned_data['user_name'], 
+                            review_text=form.cleaned_data['review_text'], 
+                            rating=form.cleaned_data['rating'])
+            review.save()       # Saving Data to Database
             print(form.cleaned_data)    # Here cleaned_data holds data in dictionary form which is submitted at form type.
             return HttpResponseRedirect("/thank-you")
     else:
