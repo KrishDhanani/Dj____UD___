@@ -60,3 +60,7 @@
 # here by using that class we add some css to the form.
 
 # Then we storing form data to the database.
+
+# Introducing Model Form.
+# When ever our form data will going to the database and if that time we want to use "ModeForm" then to see it goto forms.py and models.py file.
+#  

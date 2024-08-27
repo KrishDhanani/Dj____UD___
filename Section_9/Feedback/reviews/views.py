@@ -1,8 +1,9 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-from .forms import ReviewForm
+from .forms import ReviewForm, ReviewModelForm
 from .models import Review
+from django.views import View
 
 # Create your views here.
 
@@ -30,13 +31,30 @@ def review(request):
                             rating=form.cleaned_data['rating'])
             review.save()       # Saving Data to Database
             print(form.cleaned_data)    # Here cleaned_data holds data in dictionary form which is submitted at form type.
-            return HttpResponseRedirect("/thank-you")
+            return HttpResponseRedirect("/thank-you")        
+            
     else:
         form = ReviewForm()
-    return render(request, 'reviews/review.html', {
-        "form": form, 
+        return render(request, 'reviews/review.html', {
+            "form": form, 
         # 'has_error': False
-    })  
+        })  
 
 def thank_you(request):
     return render(request, 'reviews/thank_you.html')
+
+
+# Class Based View using
+# model form
+class ReviewModelView(View):
+    def get(self, request):
+        mform = ReviewModelForm()
+        return render(request, 'reviews/review.html', {
+            "mform": mform
+            })
+
+    def post(self, request):
+        mform = ReviewModelForm(request.POST)
+        if mform.is_valid():
+            mform.save()        # as ago we no need to write code or assign value to model  which is fetch form submission. because of this form is model form we simply save the data to the database.  
+            return HttpResponseRedirect('/thank-you')
