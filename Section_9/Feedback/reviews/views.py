@@ -46,7 +46,7 @@ def thank_you(request):
 
 # Class Based View using
 # model form
-class ReviewModelView(View):
+class ReviewModelView(View):        # Inheriting class From Django View
     def get(self, request):
         mform = ReviewModelForm()
         return render(request, 'reviews/review.html', {
