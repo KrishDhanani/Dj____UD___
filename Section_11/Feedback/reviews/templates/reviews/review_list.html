@@ -1,0 +1,14 @@
+{% extends 'reviews/base.html' %}
+
+{% block title %}
+    All Reviews
+{% endblock %}
+
+{% block body %}
+    <ul>
+        {% comment %} {% for review in object_list %} <-- bcs of we set context_object_name = 'reviews' {% endcomment %}
+        {% for review in reviews %}
+            <li>{{ review.id }}<a href={% url 'review-detail' pk=review.id %}>  {{ review.user_name }} </a> (Rating: {{review.rating}})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

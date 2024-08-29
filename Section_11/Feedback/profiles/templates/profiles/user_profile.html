@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+</head>
+<body>
+  
+  <ul>
+    {% for profile in profiles %}
+        <li>
+            <img src='{{ profile.image.url }}'>
+            {% comment %} 
+            Whenever we save file by ImageField or FileField then to get their stored path 
+            here first is 'profile' which is to reach each profile in list 
+            second is 'image' which we refer in model as field 
+            third one is 'url' to reach out each profile stored path where it is stored
+            {% endcomment %}
+        </li>
+    {% endfor %}
+  </ul>
+
+</body>
+</html>
