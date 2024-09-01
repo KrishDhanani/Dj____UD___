@@ -57,3 +57,4 @@ class SinglePostView(View):
             "comment_form": CommentForm()
         }
         return render(request, 'blog/post-detail.html', context)
+    fbjheawbrfhjeb
