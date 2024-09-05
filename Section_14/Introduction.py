@@ -45,3 +45,51 @@
 # for that we create virtual environment:
 # to create new virtual env.
 # python -m venv django_my_site  
+# 
+# After making it Successfully need to activate it. 
+# But In out System there is Policy eror accure to resolve: goto Powershell, 
+# (We run it also in terminal but i do first time in cmd so path are like that...)
+# PS C:\Users\Krish> Get-ExecutionPolicy
+# Ans: Restricted
+# PS C:\Users\Krish> Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass     (Temporary Deactivate)
+# PS C:\Users\Krish> cd..
+# PS C:\Users> cd..
+# PS C:\> cd My
+# PS C:\My> cd learning
+# PS C:\My\learning> cd Dj____UD___
+# PS C:\My\learning\Dj____UD___> cd Section_14
+# PS C:\My\learning\Dj____UD___\Section_14> cd my_site
+# PS C:\My\learning\Dj____UD___\Section_14\my_site> .\django_my_site\Scripts\Activate.ps1
+# (django_my_site) PS C:\My\learning\Dj____UD___\Section_14\my_site>
+# 
+# Now again install Django & Pillow library here:
+# (django_my_site) PS C:\My\learning\Dj____UD___\Section_14\my_site> python -m pip install Django Pillow 
+# 
+# Again write this commmand:
+# python -m pip freeze > requirements.txt   (Now this file contain really just which Project needs)
+# 
+# To know about more virtual env: https://docs.python.org/3/library/venv.html#creating-virtual-environments
+# 
+# We write this commands in Settings.py
+# from os import getenv
+# DEBUG = getenv("IS_PRODUCTION", True)
+# ALLOWED_HOSTS = [
+#     getenv("APP_HOST")  # NAME IS UPTO YOU
+# ]
+# 
+# We set this two variable here we can also set SECRET_KEY and it important to set in SECRET_KEy if you upload your code to github.
+
+
+# We use here AWS:
+# For that U need to have AWS acc.
+# After that go to(search) for server "Elastic Beanstalk".
+# Then goto "Create Application".
+# In Application Information add "any name".
+# In platform select for "Python".
+# in application code select for "Upload your code".
+# Now in Our project add one folder name as ".ebextensions"
+# Now in this folder we need to add file name as "django.config" (Make sure there is no "typos" in your file)
+# Now create all project zip file.
+# After upload it in application code.
+# After in Presents click on "Single instance".
+
